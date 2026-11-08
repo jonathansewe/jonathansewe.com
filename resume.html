@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jonathan Sewe — Résumé</title>
+<meta name="description" content="Résumé of Jonathan Sewe — AI / Software Engineer, CS &amp; Information Security. New York. Open to work.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ====== SAME TOKENS AS index.html — keep these identical ====== */
+  :root{
+    --bg:#0B0C0E;--surface:#15171B;--surface2:#1B1E23;--border:#262A30;
+    --text:#E9EAEC;--muted:#9BA1AB;
+    --gold:#CBA24C;
+    --gold-ink:#0B0C0E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.55}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  .mono{font-family:'IBM Plex Mono',monospace}
+
+  /* ====== NAV — identical to index.html ====== */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--border);gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px}
+  /* ====== SWAP THE LOGO: replace this .logo span with
+     <img class="logo" src="logo.svg" alt="JS"> once your vector logo is ready ====== */
+  .logo{width:36px;height:36px;border-radius:9px;background:var(--gold);color:var(--gold-ink);
+        display:grid;place-items:center;font-weight:700;font-size:16px;letter-spacing:-.02em;text-decoration:none}
+  .brand b{font-weight:600;font-size:15px}
+  .navlinks{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .navlinks a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .15s}
+  .navlinks a:hover{color:var(--text)}
+  .navlinks a.active{color:var(--gold)}
+
+  /* ====== RÉSUMÉ HEADER ====== */
+  .r-head{padding:44px 0 26px}
+  .r-eyebrow{font-size:12px;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+  .r-head h1{font-size:clamp(30px,5vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.03}
+  .r-title{margin-top:12px;color:var(--muted);font-size:clamp(14px,2vw,16px)}
+  .r-title b{color:var(--gold);font-weight:500}
+  .r-contact{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted)}
+  .r-contact a{transition:color .15s}
+  .r-contact a:hover{color:var(--gold)}
+  .btn-dl{margin-top:22px;display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--gold-ink);
+          font-weight:600;font-size:14px;padding:11px 20px;border-radius:9px;text-decoration:none;transition:transform .12s}
+  .btn-dl:hover{transform:translateY(-1px)}
+
+  .divider{height:1px;background:var(--gold);opacity:.5;margin:6px 0 36px}
+
+  /* ====== BODY: two columns ====== */
+  .r-body{display:grid;grid-template-columns:1fr 1.9fr;gap:40px;padding-bottom:20px}
+  .block{margin-bottom:30px}
+  .block h2{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px}
+
+  /* left rail */
+  .sk{margin-bottom:14px}
+  .sk .l{font-size:12px;color:var(--muted);margin-bottom:3px}
+  .sk .v{font-size:14px}
+  .cert{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)}
+  .cert:last-child{border-bottom:0}
+  .cert .n{font-size:13.5px}
+  .cert .s{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);white-space:nowrap}
+  .edu .school{font-size:15px;font-weight:600}
+  .edu .deg{font-size:13px;color:var(--muted);margin-top:2px}
+  .edu .dt{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:5px}
+  .edu .cw{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.5}
+  .edu .cw b{color:var(--text);font-weight:500}
+  .lang{font-size:13.5px}
+  .lang span{color:var(--muted)}
+
+  /* main column */
+  .profile{font-size:15px;line-height:1.7}
+  .job{margin-bottom:24px}
+  .job-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .job-role{font-size:15.5px;font-weight:600}
+  .job-org{color:var(--gold);font-weight:500}
+  .job-date{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);white-space:nowrap}
+  .job ul{list-style:none;margin-top:8px}
+  .job li{position:relative;padding-left:17px;margin-bottom:6px;font-size:14px;line-height:1.55}
+  .job li::before{content:'';position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.6}
+  .proj-desc{font-size:14px;line-height:1.6;margin-top:6px;color:var(--text)}
+
+  footer{margin:40px 0 50px;padding-top:22px;border-top:1px solid var(--border);
+         color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  @media(max-width:640px){
+    nav{flex-direction:column;align-items:flex-start;gap:14px}
+    .navlinks{gap:16px}
+    .r-body{grid-template-columns:1fr;gap:26px}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ====== NAV (identical to index.html) ====== -->
+  <nav>
+    <div class="brand"><a class="logo" href="index.html">JS</a><b>Jonathan Sewe</b></div>
+    <div class="navlinks">
+      <a href="index.html">Home</a><a class="active" href="resume.html">Resume</a><a href="#">Projects</a><a href="#">Writings</a><a href="#">Readings</a><a href="#">Other</a>
+    </div>
+  </nav>
+
+  <!-- ====== RÉSUMÉ HEADER ====== -->
+  <header class="r-head">
+    <div class="r-eyebrow">Résumé</div>
+    <h1>Jonathan Sewe</h1>
+    <p class="r-title"><b>AI / Software Engineer</b> &nbsp;·&nbsp; CS &amp; Information Security · Economics Minor &nbsp;·&nbsp; Bilingual English &amp; French</p>
+    <div class="r-contact">
+      <a href="mailto:Jonathan.asewe@gmail.com">Jonathan.asewe@gmail.com</a>
+      <a href="https://github.com/jonathansewe" target="_blank" rel="noopener">github.com/jonathansewe</a>
+      <a href="https://jonathansewe.com/" target="_blank" rel="noopener">jonathansewe.com</a>
+      <span>New York, NY</span>
+    </div>
+    <a href="Jonathan_Sewe_Resume.pdf" class="btn-dl" download="">↓ Download PDF</a>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- ====== BODY ====== -->
+  <div class="r-body">
+
+    <!-- LEFT RAIL -->
+    <aside>
+      <div class="block">
+        <h2>Technical Skills</h2>
+        <div class="sk"><div class="l">Languages</div><div class="v">C++, Java, JavaScript, SQL, TypeScript</div></div>
+        <div class="sk"><div class="l">Web &amp; Data</div><div class="v">React, Node.js, PostgreSQL</div></div>
+        <div class="sk"><div class="l">Tools</div><div class="v">Git / GitHub</div></div>
+        <div class="sk"><div class="l">Concepts</div><div class="v">Data Structures &amp; Algorithms, Operating Systems</div></div>
+      </div>
+
+      <div class="block">
+        <h2>Certifications</h2>
+        <div class="cert"><span class="n">CompTIA Network+</span><span class="s">Exp. Oct 2026</span></div>
+        <div class="cert"><span class="n">Google Cybersecurity</span><span class="s">Exp. Aug 2026</span></div>
+        <div class="cert"><span class="n">AWS Cloud Practitioner</span><span class="s">Exp. Dec 2026</span></div>
+      </div>
+
+      <div class="block edu">
+        <h2>Education</h2>
+        <div class="school">John Jay College (CUNY)</div>
+        <div class="deg">B.S. Computer Science &amp; Information Security · Minor: Economics</div>
+        <div class="dt">Expected 05/2027 · New York, NY</div>
+        <div class="cw"><b>Relevant coursework:</b> Operating Systems, Data Structures, Linux, Process Synchronization, Systems Design</div>
+      </div>
+
+      <div class="block">
+        <h2>Languages</h2>
+        <div class="lang">English <span>(Native)</span> · French <span>(Native)</span></div>
+      </div>
+    </aside>
+
+    <!-- MAIN COLUMN -->
+    <main>
+      <div class="block">
+        <h2>Profile</h2>
+        <p class="profile">Computer science and information-security student who builds real software across security, data, and AI, backed by an economics minor and an interest in fintech. Built a SIEM at Fisher Brothers' AI Lab that ingests, scores, and routes alerts from 13+ security tools into a single, auditable source of truth. Drawn to systems that stay correct under pressure: clear state, honest failure handling, and actions you can trace.</p>
+      </div>
+
+      <div class="block">
+        <h2>Experience</h2>
+
+        <!-- Fisher Brothers -->
+        <div class="job">
+          <div class="job-top">
+            <div><span class="job-role">AI Lab Intern</span> · <span class="job-org">Fisher Brothers</span></div>
+            <div class="job-date">Jun 2026 – Aug 2026</div>
+          </div>
+          <ul>
+            <li>Built a SIEM in TypeScript, React, and Node/PostgreSQL that ingests, normalizes, scores, and routes alerts from 13+ security tools through a staged pipeline, replacing 13 disconnected views with a single source of truth.</li>
+            <li>Automated the scoring and routing that analysts had done by hand, standardizing how alerts were prioritized and cutting manual triage time.</li>
+            <li>Built accuracy and audit controls throughout: every outbound action passes through one audited gateway, missing data is flagged instead of guessed, and each step is logged for full traceability.</li>
+            <li>Presented the finished tool to the CTO and senior staff, then shipped a revised version based on their feedback.</li>
+          </ul>
+        </div>
+
+        <!-- T-Mobile -->
+        <div class="job">
+          <div class="job-top">
+            <div><span class="job-role">Mobile Sales Expert</span> · <span class="job-org">T-Mobile</span></div>
+            <div class="job-date">Mar 2026 – Jun 2026</div>
+          </div>
+          <ul>
+            <li>Consistently met and exceeded individual sales and revenue targets in a fast-paced, high-volume retail environment.</li>
+            <li>Processed payments and account transactions with strict accuracy and kept clean, compliant records in line with company and financial-handling procedures.</li>
+            <li>Handled difficult customers with professionalism across in-person, phone, and email channels, escalating complex cases through the correct channels for timely follow-up.</li>
+          </ul>
+        </div>
+
+        <!-- McDonald's -->
+        <div class="job">
+          <div class="job-top">
+            <div><span class="job-role">Manager</span> · <span class="job-org">McDonald's</span></div>
+            <div class="job-date">Oct 2024 – Mar 2026</div>
+          </div>
+          <ul>
+            <li>Created a welcoming customer experience in a high-volume environment by resolving issues quickly and maintaining friendly, accurate service.</li>
+            <li>Coached team members on service quality, communication, and customer interaction.</li>
+            <li>Supported customers with orders and in-store technology/POS processes during peak periods.</li>
+          </ul>
+        </div>
+
+        <!-- Wells Fargo -->
+        <div class="job">
+          <div class="job-top">
+            <div><span class="job-role">Bank Teller</span> · <span class="job-org">Wells Fargo</span></div>
+            <div class="job-date">Jan 2022 – Mar 2022</div>
+          </div>
+          <ul>
+            <li>Built trust with customers by explaining transactions clearly and handling sensitive financial information with accuracy.</li>
+            <li>Helped customers navigate routine banking needs while maintaining compliance and service standards.</li>
+            <li>Identified irregular transaction activity and escalated concerns appropriately, helping prevent a $5K fraud attempt.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Projects</h2>
+        <div class="job">
+          <div class="job-top">
+            <div><span class="job-role">Concurrency / Data Protection</span> · <span class="job-org">OpenMP</span></div>
+            <div class="job-date">Jun 2025 – Aug 2025</div>
+          </div>
+          <p class="proj-desc">Built a multithreaded simulation using OpenMP and a test-and-set spinlock to prevent race conditions and protect shared data; analyzed performance tradeoffs under concurrent load.</p>
+        </div>
+        <!-- Copy the .job block above to add more projects. -->
+      </div>
+
+      <div class="block">
+        <h2>Community Leadership &amp; Service</h2>
+        <div class="job">
+          <div class="job-top">
+            <div><span class="job-role">Class Commander</span> · <span class="job-org">AFJROTC</span></div>
+            <div class="job-date">Sep 2016 – Jun 2020</div>
+          </div>
+          <ul>
+            <li>Served as Class Commander for four years, leading peers, reinforcing accountability, and helping maintain team standards.</li>
+            <li>Recognized with the MVP award for leadership, consistency, and contribution to the program.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+  </div><!-- /r-body -->
+
+  <footer>
+    <span class="mono">JONATHAN SEWE — NYC</span>
+    <span class="mono">2026</span>
+  </footer>
+
+</div>
+
+
+</body></html>
